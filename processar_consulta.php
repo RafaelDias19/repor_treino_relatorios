@@ -4,8 +4,10 @@
 //require_once 'export.php';
 include_once("conexao.php");
     
-//$mes = filter_input(INPUT_POST,'mes',FILTER_SANITIZE_STRING);
+$mes = filter_input(INPUT_POST,'mes_selecionado',FILTER_SANITIZE_STRING);
+//$mes = $_POST['mes_selecionado'];
 
+//echo $mes;
 
     $sql = mysqli_query($conn, "SELECT *,DATE_FORMAT(dtcadastro,'%m') AS mescadastro, DATE_FORMAT(dtcadastro,'%d/%m/%Y') AS diacadastro, DATE_FORMAT(dtcadastro,'%H:%i') AS horacadastro FROM tb_usuarios LIMIT 30");
     
