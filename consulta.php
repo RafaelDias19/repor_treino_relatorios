@@ -1,8 +1,6 @@
-<div style="margin-top: 100px; " class="container">
-    <div class="row">
-        <div class="col-4 text-center">
-    </div>
-    <div style="background-color:#668B8B; padding: 10px 30px 10px 30px;"  class="col-4 text-center">
+<div style="margin-top: 100px; " class="container col-md-3 col-md-offset-1 text-center">
+
+    <div style="background-color:#668B8B; padding: 10px 30px 10px 30px;"  >
         <div class="form-group">
             <label>Data Inicial</label>
             <input type="date" class="form-control text-center">
