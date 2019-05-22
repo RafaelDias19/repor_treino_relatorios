@@ -22,16 +22,20 @@
 
             <div class="collapse navbar-collapse" id="navbarsite">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" active href="./index.php?p=cadastrar">Cadastrar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./index.php?p=consulta">consulta</a>
+                        <a class="nav-link" href="./index.php?p=consulta">Consulta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.php?p=exportar">Gerar Relatório Geral</a>
                     </li>
                 </ul>
             </div>
         
         </nav>
+
     </div>
        
     <?php
@@ -39,11 +43,14 @@
             if($pag=='index'){
                 require_once "home.php"; 
             }
+            if ($pag=='cadastrar') {
+                require_once 'cadastrar.php';
+            }
             if($pag=='consulta'){
                 require_once 'consulta.php';
             }
-            if ($pag=='cadastrar') {
-                require_once 'cadastrar.php';
+            if($pag=='exportar'){
+                require_once 'exibir.php';
             }
            
     ?>
