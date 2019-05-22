@@ -1,14 +1,13 @@
+
 <?php
 
-require_once 'export.php';
+//require_once 'export.php';
 include_once("conexao.php");
     
-    if (mysqli_connect_error()) {
-        trigger_error(mysqli_connect_error());
-    }
+//$mes = filter_input(INPUT_POST,'mes',FILTER_SANITIZE_STRING);
 
 
-    $sql = mysqli_query($conn, "SELECT *, DATE_FORMAT(dtcadastro,'%d/%m/%Y') AS diacadastro, DATE_FORMAT(dtcadastro,'%H:%i') AS horacadastro   FROM tb_usuarios LIMIT 10");
+    $sql = mysqli_query($conn, "SELECT *,DATE_FORMAT(dtcadastro,'%m') AS mescadastro, DATE_FORMAT(dtcadastro,'%d/%m/%Y') AS diacadastro, DATE_FORMAT(dtcadastro,'%H:%i') AS horacadastro FROM tb_usuarios LIMIT 30");
     
     $output = '
     <style>
@@ -49,6 +48,7 @@ include_once("conexao.php");
         <tbody>';
 
         while($dados=mysqli_fetch_assoc($sql)) {
+            if($dados['mescadastro']==$mes)
             $output .=      '<tr>
                                 <td >' .$dados['idusuario']. '</td>
                                 <td >' .$dados['nome']. '</td>
@@ -68,5 +68,4 @@ include_once("conexao.php");
     
     
 ?>
-
 

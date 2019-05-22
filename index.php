@@ -8,10 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Tabela</title>
-  </head>
-  <body >
 
-    <div>
+
+    <div id="header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
             <a class="navbar-brand" href="./index.php?p=index">Teste</a>
             
@@ -33,10 +32,14 @@
                     </li>
                 </ul>
             </div>
-        
         </nav>
 
     </div>
+
+
+  </head>
+  <body >
+
        
     <?php
             $pag = @$_GET['p'];
