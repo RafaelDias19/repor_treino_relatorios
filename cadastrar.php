@@ -14,8 +14,8 @@
                 <label>Senha</label>
                 <input type="password" name="password" class="form-control" placeholder="Senha">
             </div>
-        </form>
         <button type="submit" value="cadastrar" class="btn btn-primary">Cadastrar</button>
+        </form>
     </div>
 </div>
 

@@ -1,7 +1,7 @@
 
 <?php
 
-//require_once 'export.php';
+require_once 'export.php';
 include_once("conexao.php");
     
 $mes = filter_input(INPUT_POST,'mes_selecionado',FILTER_SANITIZE_STRING);
