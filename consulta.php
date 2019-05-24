@@ -32,8 +32,10 @@
     <form method="POST" action="processar_consulta.php">
             <div class="col-3 text-center" style="background-color:#668B8B; padding: 10px 30px 10px 30px; float: left;"  >
                 <div class="form-group"> <!-- Por dia-->
-                    <label for="dia_selecionado" class="label-text">Dia:</label>
-                    <input class="form-control" type="date" required name="dia_selecionado">
+                    <label for="dia_selecionado" class="label-text">Dia inicial:</label>
+                    <input class="form-control" type="date" required name="dia_ini_selecionado">
+                    <label for="dia_selecionado" class="label-text">Dia final:</label>
+                    <input class="form-control" type="date" required name="dia_fin_selecionado">
                 </div>
                 <input type="hidden" name="download_consulta" value="true">
                 <input class="btn btn-primary" type="submit" value="Download">
