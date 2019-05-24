@@ -1,6 +1,6 @@
 <?php
 
-require_once 'export.php';
+//require_once 'export.php';
 include_once("conexao.php");
     
     if (mysqli_connect_error()) {

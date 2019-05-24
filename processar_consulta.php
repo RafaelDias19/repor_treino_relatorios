@@ -1,15 +1,16 @@
 
 <?php
 
-require_once 'export.php';
+//include_once 'export.php';
 include_once("conexao.php");
     
-$mes = filter_input(INPUT_POST,'mes_selecionado',FILTER_SANITIZE_STRING);
-//$mes = $_POST['mes_selecionado'];
 
-//echo $mes;
+if(isset($_POST['mes_selecionado']) ){
+    $mes = $_POST['mes_selecionado'];
+    $resultado = [];
 
-    $sql = mysqli_query($conn, "SELECT *,DATE_FORMAT(dtcadastro,'%m') AS mescadastro, DATE_FORMAT(dtcadastro,'%d/%m/%Y') AS diacadastro, DATE_FORMAT(dtcadastro,'%H:%i') AS horacadastro FROM tb_usuarios LIMIT 30");
+
+    $sql = mysqli_query($conn, "SELECT *, DATE_FORMAT(dtcadastro,'%m') AS mescadastro, DATE_FORMAT(dtcadastro,'%d/%m/%Y') AS diacadastro, DATE_FORMAT(dtcadastro,'%H:%i') AS horacadastro FROM tb_usuarios LIMIT 30");
     
     $output = '
     <style>
@@ -30,9 +31,9 @@ $mes = filter_input(INPUT_POST,'mes_selecionado',FILTER_SANITIZE_STRING);
             display:none;
         }
     </style>
-
+    
     <div class="container">
-
+    
     <table class="table table-striped" >
         <thead>
             <tr>
@@ -48,7 +49,7 @@ $mes = filter_input(INPUT_POST,'mes_selecionado',FILTER_SANITIZE_STRING);
             </tr>
         </thead>
         <tbody>';
-
+    
         while($dados=mysqli_fetch_assoc($sql)) {
             if($dados['mescadastro']==$mes)
             $output .=      '<tr>
@@ -59,15 +60,21 @@ $mes = filter_input(INPUT_POST,'mes_selecionado',FILTER_SANITIZE_STRING);
                                 <td >' .$dados['diacadastro']. '</td>
                                 <td >' .$dados['horacadastro']. '</td>
                         </tr>';
+           
     }
-
+    
     $output .= '    </tbody>
                 </table>
                 </div>
                 ';
                
     echo $output;
-    
+
+
+}
+
+
+
     
 ?>
 

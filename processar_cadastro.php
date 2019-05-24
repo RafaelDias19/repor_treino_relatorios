@@ -22,3 +22,6 @@ if(mysqli_insert_id($conn)){
 }else
     header("Location:index.php");
 ?>
+
+
+<h1>Cadastrado Com Sucesso!</h1>
