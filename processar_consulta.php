@@ -1,7 +1,7 @@
 
 <?php
 
-//include_once 'export.php';
+include_once 'export.php';
 include_once("conexao.php");
     
 
@@ -14,7 +14,7 @@ if(isset($_POST['mes_selecionado']) ){
     
     $output = '
     <style>
-        th{
+        #th1{
             background-color: #DAA520;
         }
         #topo{
@@ -33,19 +33,19 @@ if(isset($_POST['mes_selecionado']) ){
     </style>
     
     <div class="container">
-    
-    <table class="table table-striped" >
+    <meta charset="utf-8">
+    <table >
         <thead>
             <tr>
-                <th id="topo"  colspan="6">Dados Usuários</th>
+                <th id="topo" colspan="6">Dados Usuários</th>
             </tr>
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Login</th>
-                <th>Senha</th>
-                <th>Dia Cadastro</th>
-                <th>Hora Cadastro</th>
+                <th id="th1">ID</th>
+                <th id="th1">Nome</th>
+                <th id="th1">Login</th>
+                <th id="th1">Senha</th>
+                <th id="th1">Dia Cadastro</th>
+                <th id="th1">Hora Cadastro</th>
             </tr>
         </thead>
         <tbody>';
@@ -85,8 +85,9 @@ elseif(isset($_POST['dia_ini_selecionado']) && isset($_POST['dia_fin_selecionado
     
     if( mysqli_num_rows($execute_dia) > 0){ 
         $output = '
+        <meta charset="utf-8">
         <style>
-        th{
+        #th1{
             background-color: #DAA520;
         }
         #topo{
@@ -113,12 +114,12 @@ elseif(isset($_POST['dia_ini_selecionado']) && isset($_POST['dia_fin_selecionado
                 <th id="topo"  colspan="6">Dados Usuários</th>
             </tr>
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Login</th>
-                <th>Senha</th>
-                <th>Dia Cadastro</th>
-                <th>Hora Cadastro</th>
+                <th id="th1">ID</th>
+                <th id="th1">Nome</th>
+                <th id="th1">Login</th>
+                <th id="th1">Senha</th>
+                <th id="th1">Dia Cadastro</th>
+                <th id="th1">Hora Cadastro</th>
             </tr>
         </thead>
         <tbody>';        
